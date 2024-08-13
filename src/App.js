@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import ApplianceItem from './components/ApplianceItem';
 import './App.css';
 
 function App() {
+  const appliances = [
+    { id: 1, name: 'Fan' },
+    { id: 2, name: 'Air Conditioner' },
+    { id: 3, name: 'Lights' },
+    { id: 4, name: 'TV' },
+    { id: 5, name: 'PC' },
+
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 className="app-title">Home Appliance Control</h1>
+      <div className="appliance-list">
+        {appliances.map(appliance => (
+          <ApplianceItem key={appliance.id} appliance={appliance} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,196 @@
+/* Appliance Item Container */
+.appliance-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Appliance Header - Flexbox for Alignment */
+.appliance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.appliance-header h2 {
+    font-size: 18px;
+    margin: 0;
+    flex-grow: 1;
+    color: #333;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #2196f3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(18px);
+}
+
+/* Control Group - Ensure Proper Spacing */
+.control-group {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.control-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Color Button and Picker */
+.color-button {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: stretch;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.color-button:hover {
+    background-color: #1976d2;
+}
+
+.color-picker {
+    margin-top: 10px;
+    align-self: stretch;
+}
+
+.light-preview {
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Apply Button */
+.apply-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #388e3c;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .appliance-item {
+        padding: 15px;
+        max-width: 100%;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .app-title {
+        font-size: 20px;
+    }
+
+    .appliance-header h2 {
+        font-size: 16px;
+    }
+
+    .color-button,
+    .apply-button {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .light-preview {
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appliance-item {
+        padding: 10px;
+    }
+
+    .app-title {
+        font-size: 18px;
+    }
+
+    .appliance-header h2 {
+        font-size: 14px;
+    }
+
+    .color-button,
+    .apply-button {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .light-preview {
+        height: 20px;
+    }
+}
